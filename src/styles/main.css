@@ -92,11 +92,11 @@ body {
 }
 
 .card-front {
-  background-color: #999999;
   box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
 }
 
 .card-back {
-  font-weight: bold;
+  box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
 }
+
 
