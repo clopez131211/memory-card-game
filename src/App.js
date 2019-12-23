@@ -29,7 +29,7 @@ class App extends PureComponent {
 
   startIt = () => {
     if(this.state.isRunning) {
-      console.log("running")
+      
     } else {
       this.setState({
         isRunning: true
@@ -99,7 +99,7 @@ class App extends PureComponent {
       flipBack[card2Id] = false;
       setTimeout(() => {
         this.setState(prevState => ({ isFlipped: flipBack }));
-      }, 1000);
+      }, 750);
     }
   };
 
@@ -134,10 +134,11 @@ class App extends PureComponent {
   }
 
   render() {
+    const {minutes, seconds, bestSec, bestMin} = this.state
     return (
      <div>
-       <Header restartGame={this.restartGame} minutes={this.state.minutes} seconds={this.state.seconds} />
-       { this.isGameOver() ? <GameOver restartGame={this.restartGame} minutes={this.state.minutes} seconds={this.state.seconds} bestSec={this.state.bestSec} bestMin={this.state.bestMin}/> :
+       <Header restartGame={this.restartGame} minutes={minutes} seconds={seconds} />
+       { this.isGameOver() ? <GameOver restartGame={this.restartGame} minutes={minutes} seconds={seconds} bestSec={bestSec} bestMin={bestMin}/> :
        <div className="card-container">
           <div className="grid-container">
           {

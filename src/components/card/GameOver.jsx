@@ -1,6 +1,6 @@
 import React from 'react';
 
-const GameOver = ({ restartGame, time, minutes, seconds, bestSec, bestMin}) => (
+const GameOver = ({ restartGame, minutes, seconds, bestSec, bestMin}) => (
   <div className="justify-center">
     <h1>You Win!</h1>
       <h2>Time: {minutes}:{seconds}</h2>
