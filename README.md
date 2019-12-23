@@ -2,7 +2,11 @@
 
 This is a Memory Card Game created with ReactJS
 
-In this game you can track your time and try to beat your best time
+In this game you can track your time and your best time will be recorded
+
+You will need to match the images based off the color, type (Queen, Kind, 10 , etc.), and category (diamonds, spdes, clubs)
+
+
 
 
 ## <h2>Reset Button 
@@ -17,8 +21,6 @@ The Timer will start once you click a card and will stop once all cards are matc
 If you refresh the browser your best time will be lost. 
 
 
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
