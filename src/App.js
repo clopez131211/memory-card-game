@@ -16,8 +16,9 @@ class App extends PureComponent {
     secondsElapsed: 0,
     seconds: 0,
     minutes: 0,
-    bestMin: Number.MAX_VALUE,
-    bestSec: Number.MAX_VALUE,
+    bestSeconds: Number.MAX_VALUE,
+    bestSec: "",
+    bestMin: 0,
     isRunning: false
   };
 
@@ -52,7 +53,6 @@ class App extends PureComponent {
   handleStop = () => {
     this.setState({
       isRunning: false,
-      secondsElapsed: 0,
     })
     clearInterval(this.incrementor)
   }
@@ -121,8 +121,9 @@ class App extends PureComponent {
   isGameOver = () => {
     if(this.state.isFlipped.every((element, index, array) => element !== false)){
       this.setState({
-        bestMin: Math.min(this.state.minutes, this.state.bestMin),
-        bestSec: Math.min(this.state.seconds, this.state.bestSec)
+        bestSeconds: Math.min(this.state.secondsElapsed, this.state.bestSeconds),
+        bestMin: Math.floor(this.state.bestSeconds / 60),
+        bestSec: ('0' + ((this.state.bestSeconds % 60) - 1)).slice(-2)
       })
       this.handleStop();
     }
